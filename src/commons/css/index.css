@@ -1,0 +1,88 @@
+html,body,.body {height:100%}
+body {font-family:"Open Sans",arial,helvetica,sans-serif}
+
+/* ajax loader */
+@-webkit-keyframes rotation{from{-webkit-transform:rotate(0deg)}to{-webkit-transform:rotate(359deg)}}
+@-moz-keyframes rotation{from{-moz-transform:rotate(0deg)}to{-moz-transform:rotate(359deg)}}
+@keyframes rotation{from{transform:rotate(0deg)}to{transform:rotate(359deg)}}
+.spinner {position:absolute; top:50%; left:50%; z-index:9999; border:2px solid rgba(0,0,0,.05); border-top:2px solid #24b498; border-radius:100%; -webkit-animation:rotation .6s infinite linear; -moz-animation:rotation .6s infinite linear; animation:rotation .6s infinite linear}
+.spinner.inline {position:relative; top:4px; left:-20px; margin:0; display:inline-block}
+.spinner-xsmall {height:16px; width:16px; margin:-8px -8px 0 0}
+.spinner-medium {height:30px; width:30px; margin:-15px -15px 0 0}
+
+/* tables */
+.table-header {background:#666; color:#fff; padding:5px 10px}
+.table .selected-row,
+.table.table-striped .selected-row {background:#f37735; color:#fff}
+
+
+/* BOOTSTRAP THEME */
+.btn {border-radius:0; border:none; text-align:left; box-shadow:none; font-weight:300; margin:5px 1px}
+.btn.btn-default.btn-raised {background:#555; color:#fff}
+.btn.btn-default.btn-raised:hover {background:#333; color:#fff}
+.btn.btn-default.btn-raised.active {background:#f5874d; border-color:none; color:#fff; box-shadow:none}
+.btn.btn-default.btn-raised.active:hover {background:#d87643}
+.btn.btn-success.btn-raised {}
+.btn.btn-success.btn-raised:hover {background:#09a055}
+.btn.btn-danger.btn-raised {}
+.btn.btn-danger.btn-raised:hover {background:#af0e36}
+
+.list-group-item.active {background:#f5874d; color:#fff; border:none; border-radius:0}
+.list-group-item.active:hover {background:#d87643}
+.list-group-item.active .list-group-item-text {color:#fff}
+
+/* header */
+.navbar.navbar,
+.navbar-default.navbar {background:transparent; color:#000; border-top:solid 3px #555}
+.navbar-default .navbar-brand {padding:10px 15px; height:50px}
+.navbar-default .navbar-toggle {border:none}
+.navbar-default .navbar-toggle-main {float:left; margin-right:0}
+.navbar-default .navbar-toggle .icon-dot {display:block; width:4px; height:4px; border-radius:2px; background-color:#888}
+.navbar-default .navbar-toggle .icon-dot + .icon-dot {margin-top:3px}
+
+/* modals */
+.modal-backdrop.in {opacity:0}
+.modal .modal-content {border-radius:0; border:solid 1px #999; border-top:solid 3px #555; height:100%}
+.modal .modal-header {padding:10px 15px; border-bottom:none}
+.modal .modal-header .close {color:#fff; margin-top:6px}
+.modal .modal-footer {padding:5px 15px}
+
+/* lists */
+.list-inline > li {padding-left:0; padding-right:0}
+
+@media (min-width: 768px) {
+    .navbar {border-bottom:none}
+    .navbar-collapse {padding:0}
+}
+
+html,body {height:100%}
+body {font-family:"Open Sans",arial,helvetica,sans-serif; font-size:12px; line-height:1.42857143; color:#444; background-color:#fff; margin:0}
+.body {background:#f7f7f7; min-height:100%; border-top:solid 3px #666}
+
+/* BOOTSTRAP THEME */
+.btn {border-radius:0; border:none; text-align:left; box-shadow:none; font-weight:300;  margin:5px 1px}
+.btn.btn-default.btn-raised {background:#555; color:#fff}
+.btn.btn-default.btn-raised:hover {background:#333; color:#fff}
+.btn.btn-default.btn-raised.active {background:#f5874d; border-color:none; color:#fff; box-shadow:none}
+.btn.btn-default.btn-raised.active:hover {background:#d87643}
+.btn.btn-success.btn-raised {}
+.btn.btn-success.btn-raised:hover {background:#09a055}
+.btn.btn-danger.btn-raised {}
+.btn.btn-danger.btn-raised:hover {background:#af0e36}
+
+h3 {font-size:2rem; margin-left:10px}
+.login-region {width:300px; height:475px; position:fixed; top:50%; left:50%; margin-left:-130px; margin-top:-175px; text-align:center; border:solid 1px #ccc; border-top:solid 3px #666; padding:0 15px; background:#fff}
+.username {width:100%; text-align:center}
+.numpad-item {padding:2px}
+.numpad-item button {width:100%; line-height:3rem; font-size:2rem; color:#fff; border:none; padding:6px 12px; margin:0; text-align:center}
+.numpad-item button.numpad-ok,
+.numpad-item button.numpad-cancel {font-size:1.6rem}
+.numpad-item button.numpad-backspace {font-size:1.2rem; font-weight:100}
+.numpad-item button.numpad-ok i,
+.numpad-item button.numpad-cancel i {margin-right:10px}
+
+@media (min-width: 768px) {
+    .login-region {width:350px; height:475px; margin-left:-175px; margin-top:-200px}
+    .numpad-item button {line-height:4.5rem}
+}
+
