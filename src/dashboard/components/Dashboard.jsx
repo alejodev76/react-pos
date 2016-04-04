@@ -3,9 +3,9 @@ import Header from './Header.jsx';
 
 import NavigationApi from '../api/NavigationApi.jsx';
 import PrimaryNavigation from './navigation/PrimaryNavigation.jsx';
-import RightPanel from './RightPanel.jsx';
+import SecondaryNavigation from './navigation/SecondaryNavigation.jsx';
 
-
+import Tickets from './tickets/Tickets.jsx';
 
 class DashBoard extends React.Component
 {
@@ -17,15 +17,13 @@ class DashBoard extends React.Component
         {
             navItems:[]
         }
+        
     }
     
-     componentDidMount()
+     componentWillMount()
      {
          let callback = function()
          {
-             console.log("nav item list retreived")
-             
-         
              this.setState({navItems:NavigationApi.getNavItems()})
              
          }.bind(this);
@@ -33,17 +31,20 @@ class DashBoard extends React.Component
          NavigationApi.loadNavData(callback);
     }
     
-    
     render()
     {
        return (
            <div>
                 <Header/>
                 <PrimaryNavigation/>
-                <RightPanel navItems={this.state.navItems}/>
+                <SecondaryNavigation navItems={this.state.navItems}/>
+                <div className="content-region">
+                   {this.props.content || <Tickets/>}
+               </div>
            </div>
        )
     }
 }
 
 export default DashBoard;
+

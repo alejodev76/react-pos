@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 var gulp = require('gulp');
-var webpack = require('webpack-stream');
+//var webpack = require('webpack-stream');
 var connect = require('gulp-connect'); // runs local server
 var open = require('gulp-open'); // open url in web browser
 var browserify = require('browserify');
@@ -67,6 +67,9 @@ gulp.task('js', function () {
 });
 
 gulp.task('css', function () {
+    
+    console.log("Entering css task");
+    
     gulp.src(config.paths.modulesCss)
         .pipe(concat('modules.css'))
         .pipe(gulp.dest(config.paths.dist + '/css'));
@@ -94,12 +97,17 @@ gulp.task('lint', function(){
 gulp.task('watch', function(){
     gulp.watch(config.paths.html, ['html']);
     gulp.watch(config.paths.js, ['js', 'lint']);
-     gulp.watch(config.paths.css, ['css']);
+     gulp.watch(config.paths.modulesCss, ['css']);
+   gulp.watch(config.paths.appCss, ['css']);
 })
 
+gulp.task('default', ['html', 'js', 'css', 'images', 'lint', 'open', 'watch']);
+
+/*
 gulp.task('default', ['html', 'js', 'css', 'images', 'lint', 'open', 'watch'], function()
 {
     return gulp.src('src/entry.js')
     .pipe(webpack())
     .pipe(gulp.dest('dist/'));
 });
+*/

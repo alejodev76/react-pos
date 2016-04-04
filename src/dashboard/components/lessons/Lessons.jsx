@@ -4,7 +4,7 @@ class Lessons extends React.Component
 {
     render()
     {
-        return (<h1>Ticket list</h1>);
+        return (<h1>Lesson list</h1>);
     }
 }
 

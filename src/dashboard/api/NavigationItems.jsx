@@ -11,70 +11,70 @@ import Activities from '../components/activities/Activities.jsx';
 
 const NavItems = [
     {
-        url:'tickets',
+        url:'dashboard/tickets',
         label:'Tickets',
         component:Tickets,
         items:[]
     },
     
      {
-        url:'labor',
+        url:'dashboard/labor',
         label:'Labor',
         component:Labor,
         items:[]
     },
     
      {
-        url:'specials',
+        url:'dashboard/specials',
         label:'Specials',
         component:Specials,
         items:[]
     },
     
      {
-        url:'contests',
+        url:'dashboard/contest',
         label:'Contest',
         component:Contest,
         items:[]
     },
     
      {
-        url:'messages',
+        url:'dashboard/messages',
         label:'Messages',
         component:Messages,
         items:[]
     },
     
     {
-        url:'activities',
+        url:'dashboard/activities',
         label:'Activities',
         component:'Activities',
         items:[]
     },
     
     {
-        url:'Teetimes',
+        url:'dashboard/Teetimes',
         label:'teetimes',
         component:Teetimes,
         items:[]
     },
     
     {
-        url:'lessons',
+        url:'dashboard/lessons',
         label:'Lessons',
         component:Lessons,
         items:[]
     },
     
      {
-        url:'dinning',
+        url:'dashboard/dining',
         label:'Dinning',
         component:Dining,
         items:[]
     },
     
      {
-        url:'events',
+        url:'dashboard/events',
         label:'Events',
         component:Events,
         items:[]

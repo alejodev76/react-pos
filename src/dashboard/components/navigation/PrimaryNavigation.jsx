@@ -1,4 +1,6 @@
 import React from 'react';
+import {Link} from 'react-router';
+
 
 class PrimaryNavigation extends React.Component
 {
@@ -9,7 +11,7 @@ class PrimaryNavigation extends React.Component
                         <div id="main-navigation" className="main-navigation collapse navbar-collapse">
                             <ul className="nav navbar-nav main-navigation-top">
                                 <li className="new-transaction"><a title="New Transaction" className="btn btn-success btn-raised" href="/"><i className="glyphicon glyphicon-plus"></i> New Transaction</a></li>
-                                <li className="timekeeping"><a title="Time Keeping" className="btn btn-default btn-raised" href="/#timekeeping"><i className="glyphicon glyphicon-time"></i>Time Keeping</a></li>
+                                <li className="timekeeping"><Link title="Time Keeping" className="btn btn-default btn-raised" to="/timekeeping"><i className="glyphicon glyphicon-time"></i>Time Keeping</Link></li>
                                 <li className="clockout"><a title="Clock Out" className="btn btn-default btn-raised" href="/"><i className="glyphicon glyphicon-upload"></i>Clock Out</a></li>
                                 <li className="recipe"><a title="Recipe" className="btn btn-default btn-raised" href="/"><i className="glyphicon glyphicon-link"></i> Recipe </a></li>
                                 <li className="options"><a title="Options" className="btn btn-default btn-raised" href="/"><i className="glyphicon glyphicon-cog"></i> Options </a></li>

@@ -4,7 +4,7 @@ class TeeTimes extends React.Component
 {
     render()
     {
-        return (<h1>Ticket list</h1>);
+        return (<h1>Teetime list</h1>);
     }
 }
 

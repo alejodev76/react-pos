@@ -56,8 +56,8 @@ body {font-family:"Open Sans",arial,helvetica,sans-serif}
 }
 
 html,body {height:100%}
-body {font-family:"Open Sans",arial,helvetica,sans-serif; font-size:12px; line-height:1.42857143; color:#444; background-color:#fff; margin:0}
-.body {background:#f7f7f7; min-height:100%; border-top:solid 3px #666}
+body {font-family:"Open Sans",arial,helvetica,sans-serif; line-height:1.42857143; color:#444; margin:0}
+.body {min-height:100%; border-top:solid 3px #666}
 
 /* BOOTSTRAP THEME */
 .btn {border-radius:0; border:none; text-align:left; box-shadow:none; font-weight:300;  margin:5px 1px}

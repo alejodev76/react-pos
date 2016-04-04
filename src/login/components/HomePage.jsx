@@ -3,6 +3,10 @@ import NumberPad from './NumberPad.jsx';
 
 class HomePage extends React.Component
 {
+    componentWillMount()
+    {
+        this.context.router.push({pathname:'dashboard'});
+    }
     render()
     {
         return (
@@ -13,5 +17,10 @@ class HomePage extends React.Component
         )
     }
 }
+
+HomePage.contextTypes =
+{
+    router: function(){ React.PropTypes.func.isRequired}
+};
 
 export default HomePage

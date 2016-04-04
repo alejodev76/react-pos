@@ -1,17 +1,16 @@
 import React from 'react';
 import {Link} from 'react-router';
-import {}
+
 class SecondaryNavigation extends React.Component
 {
+    
     render()
     {
-        debugger;
-        this.context.router
         let createLink = function(navItem)
         {
             return (
                 <li  key={navItem.url}>
-                    <Link className="btn btn-default btn-raised" to={"/" + navItem.url}>{navItem.label}</Link>
+                    <Link activeClassName="active" className="btn btn-default btn-raised" to={"/" + navItem.url}>{navItem.label}</Link>
                 </li>
             );
         }
@@ -19,7 +18,9 @@ class SecondaryNavigation extends React.Component
                     <div className="secondary-navigation-region">
                         <div id="secondary-navigation" className="secondary-navigation collapse navbar-collapse">
                             <ul className="nav navbar-nav navbar-left">
-                                    {this.props.navItems.map(createLink, this)}
+                                    {
+                                        this.props.navItems.map(createLink, this)
+                                    }
                             </ul>
                         </div>
                     </div>

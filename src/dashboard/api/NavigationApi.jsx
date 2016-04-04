@@ -22,11 +22,6 @@ class NavigationApi
             }
         })
     }
-    
-    getRoutes()
-    {
-        
-    }
 }
 
 export default new NavigationApi();

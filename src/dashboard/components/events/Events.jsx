@@ -4,7 +4,7 @@ class Events extends React.Component
 {
     render()
     {
-        return (<h1>Ticket list</h1>);
+        return (<h1>Event list</h1>);
     }
 }
 
