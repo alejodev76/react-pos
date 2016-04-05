@@ -18,6 +18,15 @@ import App from './App.jsx';
 
 import {Route, IndexRoute} from 'react-router';
 
+import TimeSheetActions from './timekeeping/actions/TimeSheetActions.jsx';
+
+import moment from 'moment';
+
+let onEnter = function()
+{
+    TimeSheetActions.initializeTimesheet();
+}
+
 const routes = (
     <Route path='/' component={App}>
          <IndexRoute component={HomePage} />
@@ -33,7 +42,7 @@ const routes = (
             <Route path='dining' components={{content:Dining}}/>
             <Route path='events' components={{content:Events}}/>
          </Route>
-        <Route path='timekeeping' component={TimeKeeping}/>
+        <Route path='timekeeping' component={TimeKeeping} onEnter={onEnter}/>
     </Route>
 );
 

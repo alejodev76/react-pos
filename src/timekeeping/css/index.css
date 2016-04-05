@@ -1,4 +1,4 @@
-.content-region {position:fixed; top:60px; bottom:0; left:0; right:0; z-index:10; overflow:auto}
+.timekeeping-region {position:fixed; top:60px; bottom:0; left:0; right:0; z-index:10; overflow:auto}
 
 .timesheetdetails-options {position:relative}
 .timesheets-options ul,
@@ -11,8 +11,9 @@
 .timesheetdetails-table {max-height:300px; overflow:auto; margin-top:15px}
 
 @media (min-width: 768px) {
-    .content-region {top:50px; overflow:auto}
+    .timekeeping-region {top:50px; overflow:auto}
 
     .timesheetdetails-options {position:absolute; bottom:15px; left:0; right:0}
     .timesheetdetails-options ul.exit-option {position:absolute; top:0; right:10px}
 }
+
