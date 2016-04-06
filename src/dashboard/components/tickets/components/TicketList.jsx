@@ -4,10 +4,10 @@ class TicketList extends React.Component
 {
     render()
     {
-        let createTicketRow = function(ticket)
+        let createTicketRow = function(ticket, index)
         {
             return(
-                    <tr>
+                    <tr key={index}>
                         <td>{ticket.ID}</td>
                         <td>{ticket.FullName}</td>
                         <td>{ticket.Area}</td>

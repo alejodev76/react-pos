@@ -7,8 +7,13 @@ class TimeSheets extends React.Component
     {
         let buildEmployeeRow = function(timesheet)
         {
+            let sheetSelect = () =>
+            {
+                this.props.onTimesheetSelect(timesheet);
+            }
+            debugger;
             return(
-                        <tr key={timesheet.ID} onClick={this.props.onTimesheetSelect(timesheet)}  className= {timesheet == this.props.selectedTimeshet == timesheet ? 'selected-row' : ''}>
+                        <tr key={timesheet.ID} onClick={sheetSelect}  className= {(timesheet.ID === this.props.selectedSheetId) ? 'selected-row' : ''}>
                             <td>{timesheet.EmployeeName}</td>
                             <td>{timesheet.StartDate}</td>
                             <td>{timesheet.EndDate}</td>
@@ -38,6 +43,13 @@ class TimeSheets extends React.Component
                     </div>
         );
     }
+}
+
+TimeSheets.propTypes =
+{
+    timesheets:React.PropTypes.array.isRequired,
+    onTimesheetSelect:React.PropTypes.func.isRequired,
+    selectedSheetId:React.PropTypes.number
 }
 
 export default TimeSheets;

@@ -1,6 +1,6 @@
 import React from 'react';
 import NumPadRow from './NumPadRow.jsx';
-import Input from '../../commons/components/Input.jsx';
+import Input from '../../commons/components/formfields/Input.jsx';
 
 class NumberPad extends React.Component
 {

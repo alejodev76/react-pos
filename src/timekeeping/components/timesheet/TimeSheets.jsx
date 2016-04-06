@@ -1,6 +1,6 @@
 import React from 'react';
 import TimeSheetList from './TimeSheetList.jsx';
-import TimeSheetDetails from './TimeSheetDetails.jsx';
+import TimeSheetDetailList from './TimeSheetDetailList.jsx';
 
 class TimeSheets extends React.Component
 {
@@ -8,8 +8,8 @@ class TimeSheets extends React.Component
     {
         return(
             <div>
-                <TimeSheetList timesheets={this.props.timesheets} onTimesheetSelect={this.props.onTimesheetSelect}/>
-                <TimeSheetDetails timesheet={this.props.selectedTimesheet}/>
+                <TimeSheetList timesheets={this.props.timesheets} selectedSheetId={this.props.selectedTimesheet.ID} onTimesheetSelect={this.props.onTimesheetSelect}/>
+                <TimeSheetDetailList timesheet={this.props.selectedTimesheet} selectedTimesheetDetail={this.props.selectedTimesheetDetail}/>
            </div>
         );
     }
@@ -17,7 +17,8 @@ class TimeSheets extends React.Component
 
 TimeSheets.propTypes =
 {
-    timesheets:React.PropTypes.array.isRequired
+    timesheets:React.PropTypes.array.isRequired,
+    selectedTimesheet:React.PropTypes.object.isRequired,
 }
 
 export default TimeSheets;

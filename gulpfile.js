@@ -26,6 +26,10 @@ var config = {
             './node_modules/bootstrap-material-design/dist/css/ripples.min.css',
             './node_modules/react-datepicker/dist/react-datepicker.css'
         ],
+        modulesJs:[
+          './node_modules/bootstrap-material-design/dist/js/*.min.js',
+          './node_modules/bootstrap/dist/js/*.min.js'
+        ],
         appCss:[
              './src/**/css/**.css'
         ],
@@ -57,7 +61,11 @@ gulp.task('html', function () {
 });
 
 gulp.task('js', function () {
-
+    
+    gulp.src(config.paths.modulesJs)
+        .pipe(concat('modulesbundle.js'))
+        .pipe(gulp.dest(config.paths.dist + '/scripts'));
+ 
     browserify( {entries: config.paths.mainJs, extensions: ['.jsx'], debug: true})
         .transform(babelify, {presets: ['es2015', 'react']})
         .bundle()

@@ -7,15 +7,12 @@ class TimesheetActions
 {
     initializeTimesheet()
     {
-        debugger;
         let callback = function(results)
         {
             console.log('Make API call to fetch time sheet data to assign it in the dispatcher');
              Dispatcher.dispatch({
                 actionType: ActionTypes.INITIALIZE_TIMESHEET,
-                initialData:{
-                    timesheets:TimesheetApi.getTimesheets()
-                }
+                timesheets:TimesheetApi.getTimesheets(),
             })
         }
         
@@ -51,9 +48,35 @@ class TimesheetActions
 
         Dispatcher.dispatch(
             {
-                actionType:ActionTypes.DELETE_DELETE,
+                actionType:ActionTypes.DELETE_TIMESHEET,
                 id:id
             });
+    }
+    
+    deleteTimesheetDetail(timeSheetId, detailId)
+    {
+        TimesheetApi.deleteTimeSheetDetail(timeSheetId, detailId);
+
+        Dispatcher.dispatch(
+            {
+                actionType:ActionTypes.DELETE_TIMESHEET_DETAIL,
+                timeSheetId:timeSheetId, 
+                detailId:detailId
+            });
+    }
+    
+    loadTimeSheetList(date)
+    {
+        let callback = function()
+        {
+            console.log('Make API call to fetch time sheet data to assign it in the dispatcher');
+             Dispatcher.dispatch({
+                actionType: ActionTypes.RELOAD_TIMESHEET_LIST,
+                timesheets:TimesheetApi.getTimesheets()
+            })
+        }
+        
+        TimesheetApi.loadTimeSheets(date, callback);
     }
 }
 

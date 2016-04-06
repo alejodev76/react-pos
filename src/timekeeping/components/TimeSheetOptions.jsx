@@ -5,14 +5,23 @@ class TimeSheetOptions extends React.Component
 {
    nextDate()
     {
-        let date = this.props.date.add(1, 'days');
-        this.props.onDateChange(date);
+        this._changeDate(1, "days", "add");
     }
     
     previousDate()
     {
-        let date = this.props.date.add(1, 'days');
-        this.props.onDateChange(date);
+       this._changeDate(1, "days", "subtract");
+    }
+    
+    _changeDate(value, unit, fx)
+    {
+        this.props.date[fx](value, unit);
+        this.props.onDateChange();
+    }
+    
+    onAddDetail()
+    {
+        this.props.onEditActionTrigger("Add");   
     }
     
     render()
@@ -25,7 +34,11 @@ class TimeSheetOptions extends React.Component
                         <input type="text" value={this.props.date.format(this.props.format)} />
                         <a className="btn btn-default btn-raised btn-lg" onClick={this.nextDate.bind(this)}><i className="glyphicon glyphicon-chevron-right"></i></a>
                     </li>
-                    <li><button className="btn btn-default btn-raised btn-lg" type="button" data-toggle="modal" data-target="#modal-addtimesheet"><i className="glyphicon glyphicon-plus-sign"></i></button></li>
+                    <li>
+                        <button className="btn btn-default btn-raised btn-lg" type="button" data-toggle="modal" data-target="#modal-detaileditor" onClick={this.onAddDetail.bind(this)}>
+                                <i className="glyphicon glyphicon-plus-sign" ></i>
+                          </button>
+                    </li>
                     <li><button className="btn btn-default btn-raised btn-lg" type="button" data-toggle="modal" data-target="#modal-deletetimesheet"><i className="glyphicon glyphicon-trash"></i></button></li>
                 </ul>
             </div>

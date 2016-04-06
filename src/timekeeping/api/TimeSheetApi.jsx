@@ -8,12 +8,20 @@ let _clone = function(item)
 	//return cloned copy so that the item is passed by value instead of by reference
 };
 
+let _index = 0;
 class TimesheetApi
 {
     getTimesheets()
     {
+        console.log()
+        let index = Math.floor((Math.random() * 2) + 1);
+        while(index === _index)
+        {
+            index = Math.floor((Math.random() * 2) + 1)
+        }
         
-        return _clone(timesheets);
+        _index = index;
+        return _clone(timesheets[index]);
     }
     
     loadTimeSheets(date, callback)
