@@ -21,8 +21,23 @@ class TimeKeeping extends React.Component
             date:moment(),
             format:'MM/DD/YYYY',
             timeSheets:[],
-            selectedTimesheet:{TimesheetDetails:[]},
-            selectedTimesheetDetail:{}
+            selectedTimesheet:
+            {
+                    ID:0,
+                    EmployeeName:"",
+                    StartDate:"",
+                    EndDate:"",
+                    Time:"",
+                    TimesheetDetails:[]
+            },
+            selectedTimesheetDetail:
+            {
+                ID:0,
+                JobCode:"",
+                In:"",
+                Out:"",
+                Time:""
+            }
         }
     }
 
@@ -39,7 +54,7 @@ class TimeKeeping extends React.Component
 
     componentDidMount()
     {
-        console.log("component mounted")
+        //console.log("component mounted")
        // $.material.init();
     }
     
@@ -72,8 +87,22 @@ class TimeKeeping extends React.Component
             return;
         }
         
+        let detail = 
+        {
+            ID:0,
+            JobCode:"",
+            In:"",
+            Out:"",
+            Time:""
+        }
+        
         let details = timesheet.TimesheetDetails;
-        return details.length > 0 ? details[0] : null;
+        if( details.length > 0)
+        {
+            detail = details[0];
+        }
+        
+        return detail ;
     }
     
      _onChange()

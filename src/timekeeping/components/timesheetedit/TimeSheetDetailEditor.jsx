@@ -3,6 +3,9 @@ import React from 'react';
 import CommonApi from '../../../commons/api/CommonApi.jsx';
 import Select from '../../../commons/components/formfields/Select.jsx';
 import Input from '../../../commons/components/formfields/Input.jsx';
+import DateTime from '../../../commons/components/formfields/DateTime.jsx';
+
+import DT from 'react-bootstrap-datetimepicker';
 
 class TimeSheetDetailEditor extends React.Component
 {
@@ -10,31 +13,22 @@ class TimeSheetDetailEditor extends React.Component
     {
         super(props, context);
 
+        // state is initialized with the props received from the parent components
+        // it is OK to do so as long as it is clear that it is only for seeding the data.
         this.state =
         {
-            action:'',
+            action:this.props.action,
             employeeList:CommonApi.getEmployeeList(),
             jobCodeList:CommonApi.getJobCodeList(),
             employeeId:0,
             jobCode:'',
             clockIn:'',
-            clockout:''
+            clockOut:''
         }
-    }
-    
-    componentDidMount()
-    {
-        console.log( this.props);
-    }
-    
-    componentWillMount()
-    {
-        console.log(this.props);
     }
     
     onEmployeeChange(event)
     {
-        debugger;
         console.log(arguments);
     }
     
@@ -43,11 +37,6 @@ class TimeSheetDetailEditor extends React.Component
         
     }
     
-    onNameChange()
-    {
-        
-    } 
-    
     onClockInChange()
     {
         
@@ -55,7 +44,7 @@ class TimeSheetDetailEditor extends React.Component
     
     onClockOutChange()
     {
-        
+        debugger;
     }
     
     
@@ -72,36 +61,31 @@ class TimeSheetDetailEditor extends React.Component
                             <div className="modal-body">
                                 <Select
                                     onChange={this.onEmployeeChange.bind(this)} 
-                                    value={this.state.employeeId} 
+                                    value={this.props.timesheet.EmployeeID} 
                                     name='employee-name'
                                     options={this.state.employeeList}
                                     nameAttr='EmployeeName'
                                     valueAttr='ID'
-                                    disabled={this.state.employeeId > 0}
+                                    disabled={this.props.action !== 'Add'}
                                     label='Employee:'/>
                                   <Select
                                         onChange={this.onJobCodeChange.bind(this)} 
-                                        value={this.state.jobCode} 
+                                        value={this.props.timesheetDetail.JobCode} 
                                         name='job-code' 
                                         options={this.state.jobCodeList}
                                         nameAttr='name'
                                         valueAttr='value'
-                                         disabled={this.state.jobCode !== ''}
                                         label='Job Code:'
                                      />
-                                     <Input
-                                         name='clock-in'
-                                         type='datetime'
-                                         onChange={this.onClockInChange.bind(this)}
-                                         value={this.state.clockIn}
-                                         label='Clock in:'
+                                     <DateTime 
+                                        value={this.props.timesheetDetail.In} 
+                                        onChange={this.onClockInChange.bind(this)}
+                                        label='Clock in:'
                                     />
-                                 <Input
-                                         name='clock-in'
-                                         type='datetime'
-                                         onChange={this.onClockOutChange.bind(this)}
-                                         value={this.state.clockOut}
-                                         label='Clock out:'
+                                   <DateTime 
+                                        value={this.props.timesheetDetail.In} 
+                                        onChange={this.onClockOutChange.bind(this)}
+                                        label='Clock out:'
                                     />
                             </div>
                             <div className="modal-footer">

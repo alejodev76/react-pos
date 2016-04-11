@@ -1,0 +1,30 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'uninstall',
+1 verbose cli   'react-datepicker' ]
+2 info using npm@2.14.20
+3 info using node@v4.4.0
+4 verbose unbuild node_modules\react-datepicker
+5 info preuninstall react-datepicker@0.25.0
+6 info uninstall react-datepicker@0.25.0
+7 verbose unbuild rmStuff react-datepicker@0.25.0 from c:\Work\Projects\WebPOS\react\POS\wwwroot\node_modules
+8 info postuninstall react-datepicker@0.25.0
+9 silly gentlyRm c:\Work\Projects\WebPOS\react\POS\wwwroot\node_modules\react-datepicker is being purged from base c:\Work\Projects\WebPOS\react\POS\wwwroot
+10 verbose gentlyRm don't care about contents; nuking c:\Work\Projects\WebPOS\react\POS\wwwroot\node_modules\react-datepicker
+11 silly vacuum-fs purging c:\Work\Projects\WebPOS\react\POS\wwwroot\node_modules\react-datepicker
+12 verbose stack Error: EBUSY: resource busy or locked, rmdir 'c:\Work\Projects\WebPOS\react\POS\wwwroot\node_modules\react-datepicker'
+12 verbose stack     at Error (native)
+13 verbose cwd c:\Work\Projects\WebPOS\react\POS\wwwroot
+14 error Windows_NT 10.0.10586
+15 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "uninstall" "react-datepicker"
+16 error node v4.4.0
+17 error npm  v2.14.20
+18 error path c:\Work\Projects\WebPOS\react\POS\wwwroot\node_modules\react-datepicker
+19 error code EBUSY
+20 error errno -4082
+21 error syscall rmdir
+22 error EBUSY: resource busy or locked, rmdir 'c:\Work\Projects\WebPOS\react\POS\wwwroot\node_modules\react-datepicker'
+23 error If you need help, you may report this error at:
+23 error     <https://github.com/npm/npm/issues>
+24 verbose exit [ -4082, true ]

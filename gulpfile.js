@@ -24,7 +24,7 @@ var config = {
             './node_modules/toastr/build/toastr.min.css',
             './node_modules/bootstrap-material-design/dist/css/material.min.css',
             './node_modules/bootstrap-material-design/dist/css/ripples.min.css',
-            './node_modules/react-datepicker/dist/react-datepicker.css'
+            './node_modules/react-bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css'
         ],
         modulesJs:[
           './node_modules/bootstrap-material-design/dist/js/*.min.js',

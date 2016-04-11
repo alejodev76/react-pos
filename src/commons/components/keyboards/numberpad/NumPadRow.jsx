@@ -2,17 +2,18 @@ import React from 'react';
 
 class NumPadRow extends React.Component
 {
+    onClick(value)
+    {
+        this.props.applyNumber(value);
+    }
+    
     render()
     {
         let createNumberPad = function(numberPad)
         {
-            let click = function()
-            {
-                this.props.applyNumber(numberPad.value);
-            }
             return(
                     <div key={numberPad.value} className="col-xs-4 numpad-item">
-                        <button className="numpad-number btn btn-default btn-raised" onClick={click.bind(this)}>{numberPad.value}</button>
+                        <button className="numpad-number btn btn-default btn-raised" onClick={this.onClick.bind(this, numberPad.value)}>{numberPad.value}</button>
                     </div>
                 );    
         }

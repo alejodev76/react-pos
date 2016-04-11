@@ -15,6 +15,7 @@ class Select extends React.Component
         {
             wrapperClass += " has-error";
         }
+        
         return (
             <div className={wrapperClass}>
                 <label htmlFor={this.props.name}>{this.props.label}</label>
@@ -24,8 +25,8 @@ class Select extends React.Component
                         value={this.props.value}
                         onChange={this.props.onChange}
                         className="form-control"
-                        disabled={this.props.disabled}>
-                        <option value=''>Select and employee</option>
+                        disabled={this.props.disabled}
+                        style={this.props.style}>
                         {this.props.options.map(buildOption, this)}
                     </select>
                 </div>
@@ -34,6 +35,7 @@ class Select extends React.Component
         );
     }
 }
+
 
 Select.propTypes =
 {

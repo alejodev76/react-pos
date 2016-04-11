@@ -11,7 +11,7 @@ class TimeSheets extends React.Component
             {
                 this.props.onTimesheetSelect(timesheet);
             }
-            debugger;
+           
             return(
                         <tr key={timesheet.ID} onClick={sheetSelect}  className= {(timesheet.ID === this.props.selectedSheetId) ? 'selected-row' : ''}>
                             <td>{timesheet.EmployeeName}</td>
